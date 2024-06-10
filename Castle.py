@@ -22,14 +22,17 @@ class player:
 inst_game_info = game_info()
 inst_player = player(2,2)
 
-player_graphic = pygame.image.load("./graphics/player_male.png")
+# player_graphic = pygame.image.load("./graphics/player_male.png")
+player_graphic = pygame.image.load("./graphics/player_male_cyber.png")
 #player_graphic.convert()
 player_graphic.convert_alpha()
 
-floor_graphic = pygame.image.load("./graphics/floor.png")
+# floor_graphic = pygame.image.load("./graphics/floor.png")
+floor_graphic = pygame.image.load("./graphics/floor_cyber.png")
 floor_graphic.convert_alpha()
 
-door_closed_graphic = pygame.image.load("./graphics/door_closed.png")
+# door_closed_graphic = pygame.image.load("./graphics/door_closed.png")
+door_closed_graphic = pygame.image.load("./graphics/door_closed_cyber.png")
 door_closed_graphic.convert_alpha()
 
 
@@ -41,7 +44,8 @@ while run:
         if event.type == pygame.QUIT:
             run = False
 
-    window.fill((255,255,255))
+    # window.fill((255,255,255))
+    window.fill((0,0,0))
 
     W = 'wall'
     F = 'floor'
@@ -76,8 +80,15 @@ while run:
         x = 0
         for tile in h_row:
             if tile == W:
+                # pygame.draw.rect(window,
+                #                  (192, 192, 192),
+                #                  (x*inst_game_info.tile_size,
+                #                   y*inst_game_info.tile_size,
+                #                   inst_game_info.tile_size,
+                #                   inst_game_info.tile_size)
+                #                 )
                 pygame.draw.rect(window,
-                                 (192, 192, 192),
+                                 (107, 107, 107),
                                  (x*inst_game_info.tile_size,
                                   y*inst_game_info.tile_size,
                                   inst_game_info.tile_size,
